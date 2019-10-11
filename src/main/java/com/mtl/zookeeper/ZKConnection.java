@@ -91,7 +91,7 @@ public class ZKConnection {
                 return url;
             }
         }catch (IOException e){
-            //忽略
+            logger.error("system error!",e);
         }
         return DEFAULT_URL;
     }
@@ -107,7 +107,7 @@ public class ZKConnection {
             try {
                 zooKeeper.close();
             }catch (InterruptedException e){
-                //忽略
+                logger.error("system error!",e);
             }
         }
     }
