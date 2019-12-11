@@ -28,6 +28,11 @@ public class ZKConnection {
 
     private static Map<String,ZooKeeper> zooKeeperMap=new HashMap<>();
 
+    /**
+     * 不同的key，获取不同zk连接，当连接断掉后，可自动解锁
+     * @param key
+     * @return
+     */
     public synchronized static ZooKeeper getZookeeper(String key){
         if (url==null){
             url=getUrl();

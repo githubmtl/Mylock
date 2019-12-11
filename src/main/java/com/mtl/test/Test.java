@@ -16,7 +16,7 @@ public class Test {
     public static void main(String[] args) throws Exception {
         //通过系统参数设置zookeeper连接参数，也可以在目录路径下创建mylock.properties文件，默认连接地址为：127.0.0.1:2181
         System.setProperty("lock.zookeeper.url","127.0.0.1:2181");
-        for (int i=0;i<5;i++){
+        for (int i=0;i<1;i++){
             new Thread(){
                 @Override
                 public void run() {
@@ -28,7 +28,7 @@ public class Test {
                     try {
                         //模拟业务处理
                         try {
-                            TimeUnit.SECONDS.sleep(10);
+                            TimeUnit.SECONDS.sleep(30);
                         }catch (InterruptedException e){}
                     }finally {
                         //解锁
